@@ -30,10 +30,6 @@
 		</header>
 		<main class="text-center">
 			<p class="text-gray-300 mb-4">
-				本项目代码托管在 GitHub 上，欢迎访问我们的仓库：
-				<a href="https://github.com/LibreSpark/LibreTV" class="text-blue-400 hover:underline" target="_blank" rel="noopener">https://github.com/LibreSpark/LibreTV</a>
-			</p>
-			<p class="text-gray-300 mb-8">
 				LibreTV 是一个免费的在线视频搜索平台，提供视频搜索和播放服务，致力于为用户带来最佳体验。
 			</p>
 			
@@ -47,7 +43,7 @@
 					若您是版权方或相关权利人，发现本站搜索结果中存在侵犯您合法权益的内容，请通过以下渠道向我们反馈：
 				</p>
 				<div class="bg-[#1a1a1a] p-4 rounded-md mb-4 text-left">
-					<p class="text-gray-300"><span class="font-semibold">投诉邮箱：</span><a href="mailto:troll@pissmail.com" class="text-blue-400 hover:underline">troll@pissmail.com</a></p>
+					<p class="text-gray-300"><span class="font-semibold">投诉邮箱：</span><a href="mailto:gm@leotech.site" class="text-blue-400 hover:underline">gm@leotech.site</a></p>
 				</div>
 				<p class="text-gray-300 text-left">
 					请在投诉邮件中提供：您的身份证明、权利证明、侵权内容的具体链接及相关说明。我们将在收到投诉后尽快处理，对于确认侵权的内容，将立即断开相关链接，停止展示侵权内容，并将处理结果反馈给您。
@@ -57,9 +53,28 @@
 		<footer class="mt-12 text-center">
 			<div class="flex justify-center space-x-4">
 				<a href="/" class="text-gray-400 hover:text-white transition-colors">回到首页</a>
-				<a href="https://www.unicef.org/zh" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 transition-colors">捐赠</a>
+				<a href="#" onclick="showDonateModal(event)" class="text-blue-400 hover:text-blue-300 transition-colors">捐赠</a>
 			</div>
 		</footer>
 	</div>
+	<!-- 捐赠弹窗 -->
+	<div id="donateModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+		<div class="bg-[#111] p-8 rounded-lg border border-[#333] flex flex-col items-center">
+			<h2 class="text-2xl font-bold gradient-text mb-4">支持 LibreTV</h2>
+			<img src="image/29.png" alt="捐赠二维码" class="w-64 h-64 object-contain mb-4" />
+			<button onclick="closeDonateModal()" class="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded">关闭</button>
+		</div>
+	</div>
+	<script>
+	function showDonateModal(e) {
+		e.preventDefault();
+		document.getElementById('donateModal').classList.remove('hidden');
+		document.getElementById('donateModal').classList.add('flex');
+	}
+	function closeDonateModal() {
+		document.getElementById('donateModal').classList.add('hidden');
+		document.getElementById('donateModal').classList.remove('flex');
+	}
+	</script>
 </body>
 </html>

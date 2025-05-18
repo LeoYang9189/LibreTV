@@ -326,7 +326,7 @@
                     <div class="mt-2 flex justify-center md:justify-end space-x-4">
                         <a href="about.html" class="text-gray-400 hover:text-white text-sm transition-colors">关于我们</a>
                         <a href="privacy.html" class="text-gray-400 hover:text-white text-sm transition-colors">隐私政策</a>
-                        <a href="https://www.unicef.org/zh" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 text-sm transition-colors">捐赠</a>
+                        <a href="#" onclick="showDonateModal(event)" class="text-blue-400 hover:text-blue-300 text-sm transition-colors">捐赠</a>
                     </div>
                 </div>
             </div>
@@ -460,6 +460,26 @@
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
+    </script>
+
+    <!-- 捐赠弹窗 -->
+    <div id="donateModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+      <div class="bg-[#111] p-8 rounded-lg border border-[#333] flex flex-col items-center">
+        <h2 class="text-2xl font-bold gradient-text mb-4">支持 LibreTV</h2>
+        <img src="image/29.png" alt="捐赠二维码" class="w-64 h-64 object-contain mb-4" />
+        <button onclick="closeDonateModal()" class="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded">关闭</button>
+      </div>
+    </div>
+    <script>
+    function showDonateModal(e) {
+      e.preventDefault();
+      document.getElementById('donateModal').classList.remove('hidden');
+      document.getElementById('donateModal').classList.add('flex');
+    }
+    function closeDonateModal() {
+      document.getElementById('donateModal').classList.add('hidden');
+      document.getElementById('donateModal').classList.remove('flex');
+    }
     </script>
 </body>
 </html>
